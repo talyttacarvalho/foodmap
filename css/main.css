@@ -1,9 +1,22 @@
 .bg {
-  height: 100vh;
+	height: 100vh;
+}
+
+#screen-two {
+	display: none;
 }
 
 #title {
-  animation-duration: 2s;
-  /* animation-delay: 2s; */
-  animation-iteration-count: 2;
+	animation-duration: 2s;
+	/* animation-delay: 2s; */
+	animation-iteration-count: 2;
+}
+
+#map {
+	height: 40vh;
+	width: 80vw;
+}
+
+.bg-screen-two {
+	height: 100vh;
 }
