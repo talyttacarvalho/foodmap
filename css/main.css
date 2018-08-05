@@ -1,9 +1,17 @@
 .bg {
 	height: 100vh;
+	font-family: 'Mirza', cursive;
+	font-weight: 700;
 }
 
 #screen-two {
 	display: none;
+}
+
+.set-font {
+	font-family: 'Mirza', cursive;
+	font-weight: 500;
+	text-decoration: underline;
 }
 
 #title {
@@ -14,9 +22,25 @@
 
 #map {
 	height: 40vh;
-	width: 80vw;
+	width: 50vw;
+}
+
+.map {
+	height: 40vh;
+	width: 50vw;
 }
 
 .bg-screen-two {
 	height: 100vh;
+}
+
+.w-set {
+	width: 80vw;
+}
+
+
+.set-img {
+	height: 25vh;
+	width: 25vw;
+	margin: 2%;
 }

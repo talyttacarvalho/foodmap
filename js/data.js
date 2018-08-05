@@ -66,8 +66,8 @@ const restaurantes = [
   {
     "name": "Sushimasa",
     "image": "assets/sushimasa.png",
-    "latitude": -23.5600095,
-    "longitude": -46.66369069999996,
+    "latitude": -24.4776639,
+    "longitude": -45.8114206,
     "description": "This modern spot offers Japanese fare, with a variety of  fish, a buffet & all-you-can-eat options.",
     "type": "japonesa"
   }
