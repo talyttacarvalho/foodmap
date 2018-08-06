@@ -100,7 +100,6 @@ function showImg(restaurant, index) {
 		$("#modalRestaurants").modal();
 		$("#modalRestaurantslLabel").html(restaurant.name);
 		var map = '<iframe src="https://maps.google.com/maps?q=' + restaurant.latitude + ',' + restaurant.longitude + '&hl=es;z=14&amp;output=embed" class="map"</iframe>';
-		console.log(map);
 		$("#modalRestaurantslMap").html(map);
 		$("#modalRestaurantslDescription").html(restaurant.description);
 	});

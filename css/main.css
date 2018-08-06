@@ -49,9 +49,14 @@
 	height: 19vh;
 	width: 16vw;
 	margin: 2%;
+	cursor: pointer;
 }
 
 .set-container {
 	display: flex;
 	justify-content: center;
+}
+
+.set-font {
+	
 }
