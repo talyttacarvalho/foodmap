@@ -4,6 +4,14 @@
 	font-weight: 700;
 }
 
+.text-color {
+	color: #DCB239;
+}
+
+.text-color-screen {
+	color: #DF744A;
+}
+
 #screen-two {
 	display: none;
 }
@@ -38,9 +46,13 @@
 	width: 80vw;
 }
 
-
 .set-img {
 	height: 25vh;
 	width: 25vw;
 	margin: 2%;
+}
+
+.set-container {
+	display: flex;
+	justify-content: center;
 }

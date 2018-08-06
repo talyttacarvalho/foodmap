@@ -2,81 +2,81 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Mirza:400,500,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title>FoodMap</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+	  crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Mirza:400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>FoodMap</title>
 </head>
 
 <body>
-  <!-- Tela de início -->
-  <section id="screen-one">
-    <div class="bg bg-light d-flex justify-content-center">
-      <h1 class="text-danger d-flex flex-column align-self-center animated flip" id="title">FOODMAP</h1>
-    </div>
-  </section>
+	<!-- Tela de início -->
+	<section id="screen-one">
+		<div class="bg bg-dark d-flex justify-content-center">
+			<h1 class="text-success d-flex flex-column align-self-center animated flip" id="title">FOODMAP</h1>
+		</div>
+	</section>
 
-  <!-- Primeira tela -->
-  <section id="screen-two">
-    <div class="bg-bg-light">
-      <h3 class="set-font text-danger d-flex flex-column align-items-center pt-3">FOODMAP</h3>
+	<!-- Primeira tela -->
+	<section id="screen-two">
+		<div class="bg-dark">
+			<h3 class="set-font text-white d-flex flex-column align-items-center pt-3">FOODMAP</h3>
 
-      <div class="d-flex justify-items-center flex-column bg-light bg-screen-two pt-4">
-        <div id="map" class="d-flex align-self-center border border-warning"></div>
+			<div class="d-flex justify-items-center flex-column bg-light bg-screen-two pt-4">
+				<div id="map" class="d-flex align-self-center border border-warning"></div>
 
-        <h4 class="text-danger d-flex flex-column align-self-center pt-3 pb-3 set-font">Comida perto de você</h4>
+				<h4 class="text-success d-flex flex-column align-self-center pt-3 pb-3 set-font">Comida perto de você</h4>
 
-        <div class="input-group d-flex flex-row align-self-center w-set">
-          <input type="text" class="form-control border-danger" placeholder="Busque por restaurante ou tipo de comida" id="restaurants"
-            aria-label="Filtrar Restaurantes" aria-describedby="search">
-          <div class="input-group-append">
-            <button class="form-control btn btn-outline-danger" type="button" id="search">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-        <div class="d-flex flex-wrap mt-5 justify-content-center" id="list-restaurants"></div>
-      </div>
-    </div>
-  </section>
+				<div class="input-group d-flex flex-row align-self-center w-set">
+					<input type="text" class="form-control border-success" placeholder="Busque por restaurante ou tipo de comida" id="restaurants"
+					  aria-label="Filtrar Restaurantes" aria-describedby="search">
+					<div class="input-group-append">
+						<button class="form-control btn btn-success" type="button" id="search">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+				<div class="d-flex flex-wrap mt-5 justify-content-center" id="list-restaurants"></div>
+			</div>
+		</div>
+	</section>
 
-  <!-- Modal -->
-  <section>
-    <div class="modal fade" id="modalRestaurants" tabindex="-1" role="dialog" aria-labelledby="modalRestaurantsLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalRestaurantslLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div id="modalRestaurantslMap"></div>
-            <div id="modalRestaurantslDescription"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Pedir Agora</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+	<!-- Modal -->
+	<section>
+		<div class="modal fade" id="modalRestaurants" tabindex="-1" role="dialog" aria-labelledby="modalRestaurantsLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modalRestaurantslLabel"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id="modalRestaurantslMap" class="set-container mb-3"></div>
+						<div id="modalRestaurantslDescription"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-success" data-dismiss="modal">Pedir Agora</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2SPPOKqcmj51YuOnV3LNr7We8ErQKKKo" async defer></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2SPPOKqcmj51YuOnV3LNr7We8ErQKKKo" async defer></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<script src="js/data.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 </html>
