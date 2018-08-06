@@ -1,33 +1,58 @@
 var maps;
-var userPosition;
 
-function initMap() {
-	userPosition = {
-		lat: -23.5576364,
-		lng: -46.6628473
-	};
-	maps = new google.maps.Map(document.getElementById('map'), {
-		center: userPosition,
-		zoom: 14
-	});
+var userPosition = { center:  {		lat: -23.5576364,		lng: -46.6628473	},	zoom: 14 };
+var arrRestaurants = [];
+
+// Pegando a localizacao do usuario
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
+	} else {
+		console.log("Seu browser não suporta Geolocalização.")
+	}
+
+	initMap(userPosition);
+}
+
+function showPosition(position) {
+	userPosition = { center:  {		lat: position.coords.latitude,		lng: position.coords.longitude	},	zoom: 16 };
+}
+
+function showError(error) {
+	switch (error.code) {
+		case error.PERMISSION_DENIED:
+			console.log("Usuário rejeitou a solicitação de Geolocalização.")
+			break;
+		case error.POSITION_UNAVAILABLE:
+			console.log("Localização indisponível.")
+			break;
+		case error.TIMEOUT:
+			console.log("A requisição expirou.")
+			break;
+		case error.UNKNOWN_ERROR:
+			console.log("Algum erro desconhecido aconteceu.")
+			break;
+	}
+}
+
+function initMap(userPosition) {
+	maps = new google.maps.Map(document.getElementById('map'), userPosition);
 
 	//Pegar dados Json
-	var features = restaurantes.map(function (r) {
+	var locals = restaurantes.map(function (r) {
 		return {
 			position: new google.maps.LatLng(r.latitude, r.longitude),
 			type: 'info'
 		}
 	});
 	// Criar pins
-	features.forEach(function (feature) {
+	locals.forEach(function (local) {
 		var marker = new google.maps.Marker({
-			position: feature.position,
+			position: local.position,
 			map: maps
 		});
 	});
 }
-
-var arrRestaurants = [];
 
 function getRestaurantsOfData() {
 	restaurantes.map(function (r) {
@@ -35,8 +60,8 @@ function getRestaurantsOfData() {
 		arrRestaurants.push(r.type)
 	});
 
-	arrRestaurants = arrRestaurants.filter(function (x, y) {
-		return arrRestaurants.indexOf(x) === y;
+	arrRestaurants = arrRestaurants.filter(function (value, index) {
+		return arrRestaurants.indexOf(value) === index;
 
 	});
 
@@ -85,66 +110,12 @@ $("#search").click(function () {
 	}
 });
 
+
 $(document).ready(function () {
+	getLocation();
 	$("#screen-one").delay("3000").fadeToggle("slow");
 	$("#screen-two").delay("3000").fadeIn("slow");
-	initMap();
+	initMap(userPosition);
 	getRestaurantsOfData();
 	showRestaurants(restaurantes);
 });
-
-
-
-
-
-
-
-
-// $(function(){
-//   $("#screen-two").fadeIn("fast");
-//   getLocation();
-//   initMap();
-//   console.log(userPosition);
-//   getRestaurantsOfData();
-//   $("#restaurants").autocomplete({
-//     source: arrRestaurants
-//   });
-// });
-
-function getLocation() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, showError);
-	} else {
-		console.log("Seu browser não suporta Geolocalização.")
-	}
-}
-
-function showPosition(position) {
-	userPosition = {
-		lat: position.coords.latitude,
-		lng: position.coords.longitude
-	};
-
-}
-
-function showError(error) {
-	switch (error.code) {
-		case error.PERMISSION_DENIED:
-			console.log("Usuário rejeitou a solicitação de Geolocalização.")
-			break;
-		case error.POSITION_UNAVAILABLE:
-			console.log("Localização indisponível.")
-			break;
-		case error.TIMEOUT:
-			console.log("A requisição expirou.")
-			break;
-		case error.UNKNOWN_ERROR:
-			console.log("Algum erro desconhecido aconteceu.")
-			break;
-	}
-
-	userPosition = {
-		lat: -23.5576364,
-		lng: -46.6628473
-	};
-}

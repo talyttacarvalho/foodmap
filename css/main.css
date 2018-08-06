@@ -1,3 +1,4 @@
+
 .bg {
 	height: 100vh;
 	font-family: 'Mirza', cursive;
@@ -28,9 +29,8 @@
 	animation-iteration-count: 2;
 }
 
-#map {
-	height: 40vh;
-	width: 50vw;
+.get-location{
+	width: fit-content;
 }
 
 .map {
@@ -47,8 +47,8 @@
 }
 
 .set-img {
-	height: 25vh;
-	width: 25vw;
+	height: 15vh;
+	width: 15vw;
 	margin: 2%;
 }
 
