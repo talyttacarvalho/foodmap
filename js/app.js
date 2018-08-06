@@ -1,6 +1,12 @@
 var maps;
 
-var userPosition = { center:  {		lat: -23.5576364,		lng: -46.6628473	},	zoom: 14 };
+var userPosition = {
+	center: {
+		lat: -23.5576364,
+		lng: -46.6628473
+	},
+	zoom: 14
+};
 var arrRestaurants = [];
 
 // Pegando a localizacao do usuario
@@ -15,7 +21,13 @@ function getLocation() {
 }
 
 function showPosition(position) {
-	userPosition = { center:  {		lat: position.coords.latitude,		lng: position.coords.longitude	},	zoom: 16 };
+	userPosition = {
+		center: {
+			lat: position.coords.latitude,
+			lng: position.coords.longitude
+		},
+		zoom: 16
+	};
 }
 
 function showError(error) {
@@ -94,12 +106,12 @@ function showImg(restaurant, index) {
 	});
 }
 
-$("#search").click(function () {
-	var search = $("#restaurants").val();
+function searchRestaurants() {
+	var search = $("#restaurants").val().toLowerCase();
 	$("#list-restaurants").empty();
 	var arrFilteredRestaurants = [];
 	restaurantes.map(function (r) {
-		if (r.name === search || r.type === search) {
+		if (r.name.toLowerCase().indexOf(search) !== -1 || r.type.toLowerCase().indexOf(search) !== -1) {
 			arrFilteredRestaurants.push(r);
 		}
 	});
@@ -108,6 +120,14 @@ $("#search").click(function () {
 	} else {
 		showRestaurants(arrFilteredRestaurants);
 	}
+}
+
+$("#search").click(function () {
+	searchRestaurants();
+});
+
+$("#restaurants").keyup(function () {
+	searchRestaurants();
 });
 
 $(document).ready(function () {
