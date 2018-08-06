@@ -110,7 +110,6 @@ $("#search").click(function () {
 	}
 });
 
-
 $(document).ready(function () {
 	getLocation();
 	$("#screen-one").delay("3000").fadeToggle("slow");

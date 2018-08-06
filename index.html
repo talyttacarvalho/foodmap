@@ -16,27 +16,22 @@
 </head>
 
 <body>
-	<!-- Tela de início -->
+	<!-- Tela de inicio -->
 	<section id="screen-one">
 		<div class="bg bg-dark d-flex justify-content-center">
 			<h1 class="text-success d-flex flex-column align-self-center animated flip" id="title">FOODMAP</h1>
 		</div>
 	</section>
 
-	<!-- Primeira tela -->
+	<!-- Tela principal -->
 	<section id="screen-two">
 		<div class="bg-dark">
 			<h3 class="set-font text-white d-flex flex-column align-items-center pt-3">FOODMAP</h3>
-
-			
-
 			<div class="d-flex justify-items-center flex-column bg-light bg-screen-two pt-4">
-					
-				<div id="map" class="d-flex align-self-center border border-dark map"></div>			
-				<button type="button" class="btn btn-success d-flex align-self-center mt-3 pb-3 get-location" onclick="getLocation()"><i class="fas fa-map-marked-alt"></i> Pegar Localização atual</button>
-
+				<div id="map" class="d-flex align-self-center border border-dark map"></div>
+				<button type="button" class="btn btn-success d-flex align-self-center mt-3 pb-3 get-location" onclick="getLocation()">
+					<i class="fas fa-map-marked-alt"></i>Pegar Localização atual</button>
 				<h4 class="text-success d-flex flex-column align-self-center pt-3 pb-3 set-font">Comida perto de você</h4>
-
 				<div class="input-group d-flex flex-row align-self-center w-set">
 					<input type="text" class="form-control border-success" placeholder="Busque por restaurante ou tipo de comida" id="restaurants"
 					  aria-label="Filtrar Restaurantes" aria-describedby="search">
@@ -46,7 +41,8 @@
 						</button>
 					</div>
 				</div>
-				<div class="d-flex flex-wrap mt-5 justify-content-center" id="list-restaurants"></div>
+				<h4 class="text-success d-flex pt-4 ml-3 set-font">Sugestões para você:</h4>
+				<div class="d-flex flex-wrap mt-2 justify-content-center" id="list-restaurants"></div>
 			</div>
 		</div>
 	</section>
